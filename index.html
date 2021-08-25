@@ -15,7 +15,7 @@
         <script>
             AmCharts.ready(function() {
 			    map = new AmCharts.AmMap();
-                map.addTitle("2021届23班毕业去向图", 50);
+                map.addTitle("2021届23班毕业去向图-中国|China", 50);
 
                 // some svg used later
                 var targetSVG = "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z M9,15.93 c-3.83,0-6.93-3.1-6.93-6.93S5.17,2.07,9,2.07s6.93,3.1,6.93,6.93S12.83,15.93,9,15.93 M12.5,9c0,1.933-1.567,3.5-3.5,3.5S5.5,10.933,5.5,9S7.067,5.5,9,5.5 S12.5,7.067,12.5,9z";
@@ -44,7 +44,7 @@
                 var dataProvider = {
                         mapVar: AmCharts.maps.china,
                         images: [
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"北京", latitude:39.9056, longitude:116.3958, customData:'单昕（北京体育大学）｜都可心（北京外国语大学）｜冯雨欣（北京体育大学）｜谷行言｜李莞婷（中国人民大学）｜王奕文',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"北京", latitude:39.9056, longitude:116.3958, customData:'单昕、冯雨欣（北京体育大学）｜都可心（北京外国语大学）｜谷行言｜李莞婷（中国人民大学）｜王奕文',},
                             {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"济南", latitude:36.6702, longitude:117.0207, customData:'乔思锦、宋昱樟（山东大学）',},
                             {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"郑州", latitude:34.7500, longitude:113.6333, customData:'陈文轩（河南财经政法大学）｜李昊忱、杨如弘若（郑州大学）｜王怡霖｜张竞文｜周非凡',},
                             {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"广州", latitude:23.1166, longitude:113.2500, customData:'楚甜甜｜樊志鑫',},
@@ -65,7 +65,7 @@
                             {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"天津", latitude:39.1336, longitude:117.2054, customData:'苗卓琦｜周琬钦（南开大学）',},
                             {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"香港", latitude:22.3000, longitude:114.2000, customData:'郭欣怡（香港中文大学）',},
                             {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"宁波", latitude:29.8603, longitude:121.6245, customData:'李若静｜钟紫涵（宁波诺丁汉）',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"重庆", latitude:29.5637, longitude:106.5504, customData:'吕婧玥｜马承钰（西南大学）｜安麒羽｜常乂文',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"重庆", latitude:29.5637, longitude:106.5504, customData:'马承钰（西南大学）｜安麒羽｜吕婧玥｜常乂文',},
                             
                         ],
                         getAreasFromMap: true,
@@ -85,7 +85,7 @@
                         title: "北京",
                         id: 'CN-11',
                         color: "#A5DEFF",
-                        customData: "单昕（北京体育大学）｜都可心（北京外国语大学）｜冯雨欣（北京体育大学）｜谷行言｜李莞婷（中国人民大学）｜王奕文。",
+                        customData: "单昕、冯雨欣（北京体育大学）｜都可心（北京外国语大学）｜谷行言｜李莞婷（中国人民大学）｜王奕文。",
                         groupId: "6"
                     },
                     {
@@ -295,7 +295,7 @@
                         title: "重庆",
                         id: 'CN-50',
                         color: "#518AE0",
-                        customData: "吕婧玥｜马承钰（西南大学）｜安麒羽｜常乂文。",
+                        customData: "马承钰（西南大学）｜安麒羽｜吕婧玥｜常乂文。",
                         groupId: "4"
                     },
                     {
@@ -430,7 +430,7 @@
                     </a>
                 </li>
                 <li class='list' style="float:right">
-                    <a href="./html/contact.html">
+                    <a href="">
                         <span class="icon">
 
                         </span>
@@ -441,9 +441,9 @@
                 </li>
             </ul>
         </div>
-        <audio autoplay>
+        <!-- <audio autoplay>
             <source src='./src/Minecraft.mp3'>
-        </audio>
+        </audio> -->
         <div id='memory'>
             <div class='memories'>
                 <h2>2021届新枫杨记忆回顾</h2>
@@ -456,7 +456,7 @@
                 </ul>
                 <h3>高三下5月：</h3>
                 <ul>
-                    <li>                        
+                    <li>
                         <a href='https://b23.tv/LK5dwx'><img src='./src/002.jpg' width='150px'><br>毕业典礼《定义青春》</a>
                     </li>
                     <li>
@@ -476,7 +476,6 @@
             </div>
         </div>
         <div id="mapdivChina"></div>
-
         <!-- <div id="listdiv"></div> -->
     </body>
     <script>

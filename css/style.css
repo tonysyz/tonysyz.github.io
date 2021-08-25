@@ -16,7 +16,6 @@ body {
 	padding: 0;
 	overflow: hidden;
 	background-color: rgb(116, 116, 116);
-	/* position:absolute; */
 	top:0;
 	width:100%;
 	border-radius: 10px;
@@ -49,9 +48,9 @@ body {
 #mapdivChina {
 	overflow: hidden;
 	position:relative;
-	width:66%;
-	margin-left: 30px;
-	/* margin-right: auto; */
+	width:80%;
+	margin-left: 80px;
+	margin-right: 0px;
 	margin-top: 10px;
 	/* background-color:#DDDDDD; */
 	background-image: url('../src/001.jpg');
@@ -98,7 +97,7 @@ body {
 #memory .memories ul li a {
 	display: block;
 	background-color: rgba(190, 238, 232, 0.548);
-	font-size: 15px;
+	font-size: 12px;
 	margin-top:25px;
 	margin-bottom: 25px;
 	padding: 3px;
@@ -109,7 +108,7 @@ body {
 }
 
 #memory .memories ul li a:hover{
-	font-size:17px;
+	font-size:15px;
 	color:rgb(195, 0, 255);
 }
 
