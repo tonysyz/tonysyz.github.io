@@ -4,10 +4,11 @@ body {
 	color: black;
 }
 
-/* a:link {color: #84c4e2;}
-a:visited {color:#84c4e2;}
-a:hover {color: #cd82ad;}
-a:active {color: #84c4e2;} */
+/* #coverA {
+	width:100%;
+	height: 100%;
+	opacity: 50%;
+} */
 
 #navigation ul {
 	list-style-type: none;
@@ -15,15 +16,17 @@ a:active {color: #84c4e2;} */
 	padding: 0;
 	overflow: hidden;
 	background-color: rgb(116, 116, 116);
-	position:sticky;
+	/* position:absolute; */
 	top:0;
 	width:100%;
+	border-radius: 10px;
 }
 
 #navigation li {
 	float:left;
 	border-right: 1px solid #bbb;
 	display: inline;
+	border-radius: 10px;
 }
 
 #navigation li a {
@@ -32,6 +35,7 @@ a:active {color: #84c4e2;} */
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
+	border-radius: 10px;
 }
 
 #navigation li a:hover {
@@ -43,8 +47,90 @@ a:active {color: #84c4e2;} */
 }
 
 #mapdivChina {
-	width:100%;
-	background-color:#DDDDDD;
-	height:900px;
-	opacity:75%
+	overflow: hidden;
+	/* position:absolute; */
+	width:66%;
+	margin-left: 20%;
+	margin-right: auto;
+	margin-top: 10px;
+	/* background-color:#DDDDDD; */
+	background-image: url('../src/001.jpg');
+	background-size: contain;
+	height:866px;
+	border-radius: 10px;
+	opacity:80%
+}
+
+#mapdivChina div {
+	opacity: 88%;
+}
+
+#memory {
+	width:15%;
+	float: left;
+	margin:20px;
+}
+
+#memory .memories h2 {
+	background-color: antiquewhite;
+	margin:5px;
+	display:block;
+	text-align: center;
+	border-radius: 5px;
+	border-spacing: 3px;
+	text-shadow: 5px;
+	border-style: outset;
+}
+
+#memory .memories h3 {
+	background-color: #ece0ff;
+	margin-right: 20px;
+	font-style: oblique;
+	margin-left: 12px;
+	border-radius: 4px;
+	text-shadow: 3px;
+}
+
+#memory .memories ul {
+	list-style-type: none;
+}
+
+#memory .memories ul li a {
+	display: block;
+	background-color: rgba(190, 238, 232, 0.548);
+	font-size: 15px;
+	margin-top:25px;
+	margin-bottom: 25px;
+	padding: 3px;
+	font-style: normal;
+	text-decoration: none;
+	text-align: center;
+	border-radius: 7px;
+}
+
+#memory .memories ul li a:hover{
+	font-size:17px;
+	color:rgb(195, 0, 255);
+}
+
+/* cursor effect */
+body {  
+    cursor: url(../src/normal.cur), auto;
+}
+ 
+ 
+a {
+    cursor: url(../src/ayuda.cur), auto
+}
+ 
+a:active {
+    cursor: url(../src/work.cur), alias
+}
+ 
+p {
+    cursor: url(../src/texto.cur), auto
+}
+ 
+span {
+   cursor: url(../src/No_Disponible.cur), auto;
 }
