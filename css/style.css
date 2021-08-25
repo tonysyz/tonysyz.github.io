@@ -48,10 +48,10 @@ body {
 
 #mapdivChina {
 	overflow: hidden;
-	/* position:absolute; */
+	position:relative;
 	width:66%;
-	margin-left: 20%;
-	margin-right: auto;
+	margin-left: 30px;
+	/* margin-right: auto; */
 	margin-top: 10px;
 	/* background-color:#DDDDDD; */
 	background-image: url('../src/001.jpg');
