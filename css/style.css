@@ -1,0 +1,50 @@
+body {
+	font-family: Tahoma,Arial,Verdana;
+	font-size: 12px;
+	color: black;
+}
+
+/* a:link {color: #84c4e2;}
+a:visited {color:#84c4e2;}
+a:hover {color: #cd82ad;}
+a:active {color: #84c4e2;} */
+
+#navigation ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: rgb(116, 116, 116);
+	position:sticky;
+	top:0;
+	width:100%;
+}
+
+#navigation li {
+	float:left;
+	border-right: 1px solid #bbb;
+	display: inline;
+}
+
+#navigation li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+#navigation li a:hover {
+	background-color: rgb(0, 100, 167);
+}
+
+.active {
+	background-color: #873cff;
+}
+
+#mapdivChina {
+	width:100%;
+	background-color:#DDDDDD;
+	height:900px;
+	opacity:75%
+}

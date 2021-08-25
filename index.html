@@ -1,0 +1,444 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Graduation10111Map</title>
+
+        <link rel="stylesheet" href="./css/style.css" type="text/css">
+        <link rel="stylesheet" href="./css/ammap.css" type="text/css">
+        <script src="./js/ammap.js" type="text/javascript"></script>
+        <!-- check ammap/maps/js/ folder to see all available countries -->
+        <!-- map file should be included after ammap.js -->
+		<script src="./js/china.js" type="text/javascript"></script>
+        <script>
+            AmCharts.ready(function() {
+			    map = new AmCharts.AmMap();
+                map.addTitle("2021届23班毕业去向图", 20);
+
+                // some svg used later
+                var targetSVG = "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z M9,15.93 c-3.83,0-6.93-3.1-6.93-6.93S5.17,2.07,9,2.07s6.93,3.1,6.93,6.93S12.83,15.93,9,15.93 M12.5,9c0,1.933-1.567,3.5-3.5,3.5S5.5,10.933,5.5,9S7.067,5.5,9,5.5 S12.5,7.067,12.5,9z";
+                
+                map.imagesSettings = {
+			        rollOverColor: "#FFF000",
+			        rollOverScale: 3,
+                    selectedScale: 3,
+			        selectedColor: "#CCFF0F",
+                    balloonText: '[[title]]：[[customData]]', //You can use the following tags: [[title]], [[description]], [[value]] and [[percent]].
+                    // labelFontSize: 30,
+			    };
+                // change position of "JS map by amcharts"
+                map.creditsPosition = "top-right";
+
+				map.areasSettings = {
+                    rollOverOutlineColor: "#FFFFFF",
+                    rollOverColor: "#CC0000",
+                    balloonText: "[[title]]：[[customData]]",
+					outlineThickness:1.25,
+                    autoZoom:true,
+                    selectedColor: "#FF841A",
+                    unlistedAreasColor: "#888888",
+				};
+
+                var dataProvider = {
+                        mapVar: AmCharts.maps.china,
+                        images: [
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"北京", latitude:39.9056, longitude:116.3958, customData:'单昕（北京体育大学）｜都可心（北京外国语大学）｜冯雨欣（北京体育大学）｜谷行言｜李莞婷（中国人民大学）｜王奕文',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"济南", latitude:36.6702, longitude:117.0207, customData:'乔思锦、宋昱樟（山东大学）',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"郑州", latitude:34.7500, longitude:113.6333, customData:'陈文轩（河南财经政法大学）｜李昊忱、杨如弘若（郑州大学）｜王怡霖｜张竞文｜周非凡',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"广州", latitude:23.1166, longitude:113.2500, customData:'楚甜甜｜樊志鑫',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"深圳", latitude:22.5333, longitude:114.0833, customData:'李树欣',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"珠海", latitude:22.2711, longitude:113.5770, customData:'陈艺菲（北京师范大学-香港浸会大学国际学院）',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"海口", latitude:20.0500, longitude:110.1666, customData:'刘尚（海南大学）',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"廊坊", latitude:39.5380, longitude:116.6840, customData:'胡校翡',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"哈尔滨", latitude:45.8013, longitude:126.5291, customData:'秦畅（东北农业大学）',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"武汉", latitude:30.5833, longitude:114.3166, customData:'侯凯鑫｜沈小甜（中南财经政法大学）',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"长春", latitude:43.8845, longitude:125.3184, customData:'赵子佳（吉林外国语大学）',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"南京", latitude:32.0438, longitude:118.7786, customData:'陈柄言（南京审计大学）｜张禾佳｜张婧懿',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"苏州", latitude:31.5000, longitude:120.6166, customData:'李佳荣｜王路灿｜赵文迪（西交利物浦）',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"无锡", latitude:31.4900, longitude:120.3130, customData:'杨沛霖（江南大学）',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"南昌", latitude:28.6830, longitude:115.8580, customData:'赵畅',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"西安", latitude:34.2650, longitude:108.9423, customData:'冯靖涵（西安电子科技大学）｜李艺菲（陕西师范大学）｜张瀚霖｜赵煜晨｜朱栎旭（陕西科技大学）',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"上海", latitude:31.2286, longitude:121.4747, customData:'谷雨璞｜王翔宇（上海政法学院）',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"成都", latitude:30.6600, longitude:104.0633, customData:'张雨桐',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"天津", latitude:39.1336, longitude:117.2054, customData:'苗卓琦｜周琬钦（南开大学）',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"香港", latitude:22.3000, longitude:114.2000, customData:'郭欣怡（香港中文大学）',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"宁波", latitude:29.8603, longitude:121.6245, customData:'李若静｜钟紫涵（宁波诺丁汉）',},
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"重庆", latitude:29.5637, longitude:106.5504, customData:'吕婧玥｜马承钰（西南大学）｜安麒羽｜常乂文',},
+                            
+                        ],
+                        getAreasFromMap: true,
+                };
+
+                // area data writes here
+                dataProvider.areas = [
+                    {
+                        title: "安徽",
+                        id: 'CN-34',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "北京",
+                        id: 'CN-11',
+                        color: "#A5DEFF",
+                        customData: "6人",
+                        groupId: "6"
+                    },
+                    {
+                        title: "福建",
+                        id: 'CN-35',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "山东",
+                        id: 'CN-37',
+                        color: "#215AB0",
+                        customData: "2人",
+                        groupId: "2"
+                    },
+                    {
+                        title: "河南",
+                        id: 'CN-41',
+                        color: "#A5DEFF",
+                        customData: "6人",
+                        groupId: "6"
+                    },
+                    {
+                        title: "广东",
+                        id: 'CN-44',
+                        color: "#518AE0",
+                        customData: "4人",
+                        groupId: "4"
+                    },
+                    {
+                        title: "甘肃",
+                        id: 'CN-62',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "广西",
+                        id: 'CN-45',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "贵州",
+                        id: 'CN-52',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "湖南",
+                        id: 'CN-43',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "海南",
+                        id: 'CN-46',
+                        color: "#002B81",
+                        customData: "1人",
+                        groupId: "1"
+                    },
+                    {
+                        title: "河北",
+                        id: 'CN-13',
+                        color: "#002B81",
+                        customData: "1人",
+                        groupId: "1"
+                    },
+                    {
+                        title: "黑龙江",
+                        id: 'CN-23',
+                        color: "#002B81",
+                        customData: "1人",
+                        groupId: "1"
+                    },
+                    {
+                        title: "湖北",
+                        id: 'CN-42',
+                        color: "#215AB0",
+                        customData: "2人",
+                        groupId: "2"
+                    },
+                    {
+                        title: "吉林",
+                        id: 'CN-22',
+                        color: "#002B81",
+                        customData: "1人",
+                        groupId: "1"
+                    },
+                    {
+                        title: "江苏",
+                        id: 'CN-32',
+                        color: "#6CFFFF",
+                        customData: "7人",
+                        groupId: "7"
+                    },
+                    {
+                        title: "江西",
+                        id: 'CN-36',
+                        color: "#002B81",
+                        customData: "1人",
+                        groupId: "1"
+                    },
+                    {
+                        title: "辽宁",
+                        id: 'CN-21',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "澳门",
+                        id: 'CN-92',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "内蒙古",
+                        id: 'CN-15',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "宁夏",
+                        id: 'CN-64',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "青海",
+                        id: 'CN-63',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "陕西",
+                        id: 'CN-61',
+                        color: "#81BAFF",
+                        customData: "5人",
+                        groupId: "5"
+                    },
+                    {
+                        title: "上海",
+                        id: 'CN-31',
+                        color: "#215AB0",
+                        customData: "2人",
+                        groupId: "2"
+                    },
+                    {
+                        title: "四川",
+                        id: 'CN-51',
+                        color: "#002B81",
+                        customData: "1人",
+                        groupId: "1"
+                    },
+                    {
+                        title: "天津",
+                        id: 'CN-12',
+                        color: "#215AB0",
+                        customData: "2人",
+                        groupId: "2"
+                    },
+                    {
+                        title: "台湾",
+                        id: 'CN-71',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "新疆",
+                        id: 'CN-65',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "云南",
+                        id: 'CN-53',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "香港",
+                        id: 'CN-91',
+                        color: "#002B81",
+                        customData: "1人",
+                        groupId: "1"
+                    },
+                    {
+                        title: "浙江",
+                        id: 'CN-33',
+                        color: "#215AB0",
+                        customData: "2人",
+                        groupId: "2"
+                    },
+                    {
+                        title: "重庆",
+                        id: 'CN-50',
+                        color: "#518AE0",
+                        customData: "4人",
+                        groupId: "4"
+                    },
+                    {
+                        title: "西藏",
+                        id: 'CN-54',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "山西",
+                        id: 'CN-14',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                ];
+
+                // data count
+                var legend = {
+			        width: 400,
+			        backgroundAlpha: 0.5,
+			        backgroundColor: "#FFFFFF",
+			        borderColor: "#666666",
+			        borderAlpha: 1,
+			        bottom: 15,
+			        left: 15,
+			        horizontalGap: 10,
+			        data: [
+			        {
+			            title: "0人", // custom text here
+			            color: "#888888",
+                    },
+			        {
+			            title: "1人", // custom text here
+			            color: "#002B81",
+                    },
+			        {
+			            title: "2人", // custom text here
+			            color: "#215AB0",
+                    },
+			        // {
+			        //     title: "3人", // custom text here
+			        //     color: "#66CC99",
+                    // },
+			        {
+			            title: "4人", // custom text here
+			            color: "#518AE0",
+                    },
+			        {
+			            title: "5人", // custom text here
+			            color: "#81BAFF",
+                    },
+			        {
+			            title: "6人", // custom text here
+			            color: "#A5DEFF",
+                    },
+			        {
+			            title: "7人", // custom text here
+			            color: "#6CFFFF",
+                    },
+			        ]
+			    };
+
+                map.addLegend(legend);
+                map.dataProvider = dataProvider;
+                // map.objectList = new AmCharts.ObjectList("listdiv");
+			    // map.showImagesInList = true;
+
+			    map.write("mapdivChina");
+            });
+
+        </script>
+    </head>
+
+    <body>
+        <!-- <div id="listdiv" style="width:300px; overflow:auto; height:300px; float:left; background-color:#999999;"></div> -->
+        <div id="title">
+
+        </div>
+        <div id="navigation">
+            <ul>
+                <li class='list'>
+                    <a href='./index.html' class="active">
+                        <span class="icon">
+
+                        </span>
+                        <span class="title">
+                            中国|China🇨🇳
+                        </span>
+                    </a>
+                </li>
+                <li class='list'>
+                    <a href="./html/world.html">
+                        <span class="icon">
+
+                        </span>
+                        <span class="title">
+                            世界|World🌍
+                        </span>
+                    </a>
+                </li>
+                <li class='list'>
+                    <a href="./html/usa.html">
+                        <span class="icon">
+
+                        </span>
+                        <span class="title">
+                            美国|USA🇺🇸
+                        </span>
+                    </a>
+                </li>
+                <li class='list'>
+                    <a href="./html/uk.html">
+                        <span class="icon">
+
+                        </span>
+                        <span class="title">
+                            英国|UK🇬🇧
+                        </span>
+                    </a>
+                </li>
+                <li class='list'>
+                    <a href="./html/australia.html">
+                        <span class="icon">
+
+                        </span>
+                        <span class="title">
+                            澳大利亚|Australia🇦🇺
+                        </span>
+                    </a>
+                </li>
+                <li class='list' style="float:right">
+                    <a href="./html/contact.html">
+                        <span class="icon">
+
+                        </span>
+                        <span class="title">
+                            联系｜Keep in touch📞
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="mapdivChina"></div>
+    </body>
+
+</html>
