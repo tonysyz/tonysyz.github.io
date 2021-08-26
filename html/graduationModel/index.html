@@ -1,0 +1,469 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Graduation10111Map</title>
+
+        <link rel="shortcut icon" href="./src/favicon.ico">
+        <link rel="stylesheet" href="./css/style.css" type="text/css">
+        <link rel="stylesheet" href="./css/ammap.css" type="text/css">
+        <script src="./js/ammap.js" type="text/javascript"></script>
+        <!-- check ammap/maps/js/ folder to see all available countries -->
+        <!-- map file should be included after ammap.js -->
+		<script src="./js/china.js" type="text/javascript"></script>
+        <script>
+            AmCharts.ready(function() {
+			    map = new AmCharts.AmMap();
+                map.addTitle("2021届xx班毕业去向图-中国|China", 50);
+
+                // some svg used later
+                var targetSVG = "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z M9,15.93 c-3.83,0-6.93-3.1-6.93-6.93S5.17,2.07,9,2.07s6.93,3.1,6.93,6.93S12.83,15.93,9,15.93 M12.5,9c0,1.933-1.567,3.5-3.5,3.5S5.5,10.933,5.5,9S7.067,5.5,9,5.5 S12.5,7.067,12.5,9z";
+                
+                map.imagesSettings = {
+			        rollOverColor: "#FFF000",
+			        rollOverScale: 3,
+                    selectedScale: 3,
+			        selectedColor: "#CCFF0F",
+                    balloonText: '[[title]]：[[customData]]', //You can use the following tags: [[title]], [[description]], [[value]] and [[percent]].
+                    // labelFontSize: 30,
+			    };
+                // change position of "JS map by amcharts"
+                map.creditsPosition = "top-right";
+
+				map.areasSettings = {
+                    rollOverOutlineColor: "#FFFFFF",
+                    rollOverColor: "#CC0000",
+                    balloonText: "[[title]]---->[[customData]]",
+					outlineThickness:1.25,
+                    autoZoom:false,
+                    selectedColor: "#FF841A",
+                    unlistedAreasColor: "#888888",
+				};
+
+                var dataProvider = {
+                        mapVar: AmCharts.maps.china,
+                        images: [
+                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"北京", latitude:39.9056, longitude:116.3958, customData:'xx(xx university)',},
+                            
+                        ],
+                        getAreasFromMap: true,
+                        autoZoom:false,
+                };
+
+                // area data writes here
+                dataProvider.areas = [
+                    {
+                        title: "安徽",
+                        id: 'CN-34',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "北京",
+                        id: 'CN-11',
+                        color: "#A5DEFF",
+                        customData: "xxxxx。",
+                        groupId: "6"
+                    },
+                    {
+                        title: "福建",
+                        id: 'CN-35',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "山东",
+                        id: 'CN-37',
+                        color: "#215AB0",
+                        customData: "xxxx。",
+                        groupId: "2"
+                    },
+                    {
+                        title: "河南",
+                        id: 'CN-41',
+                        color: "#A5DEFF",
+                        customData: "xxxx",
+                        groupId: "6"
+                    },
+                    {
+                        title: "广东",
+                        id: 'CN-44',
+                        color: "#518AE0",
+                        customData: "xxxx。",
+                        groupId: "4"
+                    },
+                    {
+                        title: "甘肃",
+                        id: 'CN-62',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "广西",
+                        id: 'CN-45',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "贵州",
+                        id: 'CN-52',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "湖南",
+                        id: 'CN-43',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "海南",
+                        id: 'CN-46',
+                        color: "#002B81",
+                        customData: "xxxx",
+                        groupId: "1"
+                    },
+                    {
+                        title: "河北",
+                        id: 'CN-13',
+                        color: "#002B81",
+                        customData: "xxxx",
+                        groupId: "1"
+                    },
+                    {
+                        title: "黑龙江",
+                        id: 'CN-23',
+                        color: "#002B81",
+                        customData: "xxxxx",
+                        groupId: "1"
+                    },
+                    {
+                        title: "湖北",
+                        id: 'CN-42',
+                        color: "#215AB0",
+                        customData: "xxxxx",
+                        groupId: "2"
+                    },
+                    {
+                        title: "吉林",
+                        id: 'CN-22',
+                        color: "#215AB0",
+                        customData: "xxxxx",
+                        groupId: "2"
+                    },
+                    {
+                        title: "江苏",
+                        id: 'CN-32',
+                        color: "#215AB0",
+                        customData: "xxxx",
+                        groupId: "2"
+                    },
+                    {
+                        title: "江西",
+                        id: 'CN-36',
+                        color: "#888888",
+                        customData: "xxxx",
+                        groupId: "0"
+                    },
+                    {
+                        title: "辽宁",
+                        id: 'CN-21',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "澳门",
+                        id: 'CN-92',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "内蒙古",
+                        id: 'CN-15',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "宁夏",
+                        id: 'CN-64',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "青海",
+                        id: 'CN-63',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "陕西",
+                        id: 'CN-61',
+                        color: "#81BAFF",
+                        customData: "xxxxx",
+                        groupId: "5"
+                    },
+                    {
+                        title: "上海",
+                        id: 'CN-31',
+                        color: "#215AB0",
+                        customData: "xxxx",
+                        groupId: "2"
+                    },
+                    {
+                        title: "四川",
+                        id: 'CN-51',
+                        color: "#002B81",
+                        customData: "xxxx",
+                        groupId: "1"
+                    },
+                    {
+                        title: "天津",
+                        id: 'CN-12',
+                        color: "#215AB0",
+                        customData: "xxxx",
+                        groupId: "2"
+                    },
+                    {
+                        title: "台湾",
+                        id: 'CN-71',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "新疆",
+                        id: 'CN-65',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "云南",
+                        id: 'CN-53',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "香港",
+                        id: 'CN-91',
+                        color: "#002B81",
+                        customData: "xxxx",
+                        groupId: "1"
+                    },
+                    {
+                        title: "浙江",
+                        id: 'CN-33',
+                        color: "#215AB0",
+                        customData: "xxxx",
+                        groupId: "2"
+                    },
+                    {
+                        title: "重庆",
+                        id: 'CN-50',
+                        color: "#518AE0",
+                        customData: "xxx",
+                        groupId: "4"
+                    },
+                    {
+                        title: "西藏",
+                        id: 'CN-54',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                    {
+                        title: "山西",
+                        id: 'CN-14',
+                        color: "#888888",
+                        customData: "0人",
+                        groupId: "0"
+                    },
+                ];
+
+                // data count
+                var legend = {
+			        width: 400,
+			        backgroundAlpha: 0.5,
+			        backgroundColor: "#FFFFFF",
+			        borderColor: "#666666",
+			        borderAlpha: 1,
+			        bottom: 15,
+			        left: 15,
+			        horizontalGap: 10,
+			        data: [
+			        {
+			            title: "0人", // custom text here
+			            color: "#888888",
+                    },
+			        {
+			            title: "1人", // custom text here
+			            color: "#002B81",
+                    },
+			        {
+			            title: "2人", // custom text here
+			            color: "#215AB0",
+                    },
+			        {
+			            title: "3人", // custom text here
+			            color: "#66CC99",
+                    },
+			        {
+			            title: "4人", // custom text here
+			            color: "#518AE0",
+                    },
+			        {
+			            title: "5人", // custom text here
+			            color: "#81BAFF",
+                    },
+			        {
+			            title: "6人", // custom text here
+			            color: "#A5DEFF",
+                    },
+			        {
+			            title: "7人", // custom text here
+			            color: "#6CFFFF",
+                    },
+			        ]
+			    };
+
+                map.addLegend(legend);
+                map.dataProvider = dataProvider;
+                // map.objectList = new AmCharts.ObjectList("listdiv");
+			    // map.showImagesInList = true;
+                // map.showAreasInList = false;
+
+			    map.write("mapdivChina");
+            });
+
+        </script>
+    </head>
+
+    <body>
+        <!-- <div id="title">
+
+        </div> -->
+        <!-- <img src='./src/001.jpg' id="coverA"> -->
+        <div id="navigation">
+            <ul>
+                <li class='list'>
+                    <a href='./index.html' class="active">
+                        <span class="icon">
+
+                        </span>
+                        <span class="title">
+                            中国|China🇨🇳
+                        </span>
+                    </a>
+                </li>
+                <!-- <li class='list'> This is deleted because the map of China is not right.
+                    <a href="./html/world.html">
+                        <span class="icon">
+
+                        </span>
+                        <span class="title">
+                            世界|World🌍
+                        </span>
+                    </a>
+                </li> -->
+                <li class='list'>
+                    <a href="./html/usa.html">
+                        <span class="icon">
+
+                        </span>
+                        <span class="title">
+                            美国|USA🇺🇸
+                        </span>
+                    </a>
+                </li>
+                <li class='list'>
+                    <a href="./html/uk.html">
+                        <span class="icon">
+
+                        </span>
+                        <span class="title">
+                            英国|UK🇬🇧
+                        </span>
+                    </a>
+                </li>
+                <li class='list'>
+                    <a href="./html/australia.html">
+                        <span class="icon">
+
+                        </span>
+                        <span class="title">
+                            澳大利亚|Australia🇦🇺
+                        </span>
+                    </a>
+                </li>
+                <li class='list' style="float:right">
+                    <a href="">
+                        <span class="icon">
+
+                        </span>
+                        <span class="title">
+                            联系｜Keep in touch📞
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- <audio autoplay>
+            <source src='./src/Minecraft.mp3'>
+        </audio> -->
+        <div id='memory'>
+            <div class='memories'>
+                <h2>2021届新枫杨记忆回顾</h2>
+                <h3>高三上10月：</h3>
+                <ul>
+                    <li>
+                        <a href='https://b23.tv/nCFWhp'><img src='./src/001.jpg' width='150px'><br>成人礼教师祝福</a>
+                        
+                    </li>
+                </ul>
+                <h3>高三下5月：</h3>
+                <ul>
+                    <li>
+                        <a href='https://b23.tv/LK5dwx'><img src='./src/002.jpg' width='150px'><br>毕业典礼《定义青春》</a>
+                    </li>
+                    <li>
+                        <a href='https://www.bilibili.com/video/BV1bK4y1978T'><img src='./src/003.jpg' width='150px'><br>毕业典礼教师祝福</a>
+                    </li>
+                    <li>
+                        <a href='https://b23.tv/q4RB67'><img src='./src/004.jpg' width='150px'><br>毕业歌《新枫杨》</a>
+                    </li>
+                    <li>
+                        <a href='https://b23.tv/qtCEjq'><img src='./src/005.jpg' width='150px'><br>毕业典礼全过程纪录</a>
+                    </li>
+                </ul>
+                <!-- 来自政教处打工人的整理 -->
+            </div>
+            <div class='memories'>
+
+            </div>
+        </div>
+        <div id="mapdivChina"></div>
+        <!-- <div id="listdiv"></div> -->
+    </body>
+    <script>
+        window.onfocus = function () {
+        document.title = '2323,(￣∇￣)';
+        };
+        window.onblur = function () {
+        document.title = '(=ﾟωﾟ)ﾉ快回来~页面崩溃了';
+        };
+    </script>
+    <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="333" src="./js/canvas-nest.min.js.css"></script>
+</html>
