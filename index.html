@@ -1,13 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Graduation10111Map</title>
 
         <link rel="shortcut icon" href="./src/favicon.ico">
         <link rel="stylesheet" href="./css/style.css" type="text/css">
-        <link rel="stylesheet" href="./css/ammap.css" type="text/css">
+        <!-- <link rel="stylesheet" href="./css/ammap.css" type="text/css"> -->
         <script src="./js/ammap.js" type="text/javascript"></script>
         <!-- check ammap/maps/js/ folder to see all available countries -->
         <!-- map file should be included after ammap.js -->
@@ -16,61 +15,205 @@
             AmCharts.ready(function() {
 			    map = new AmCharts.AmMap();
                 map.addTitle("2021届23班毕业去向图-中国|China", 50);
+                map.addTitle("Latest Updated: Aug 27, 2021", 20);
+                // map.projection = "winkel3";
+                // AmCharts.theme = AmCharts.themes.black;
 
                 // some svg used later
+                var planeSVG = "M19.671,8.11l-2.777,2.777l-3.837-0.861c0.362-0.505,0.916-1.683,0.464-2.135c-0.518-0.517-1.979,0.278-2.305,0.604l-0.913,0.913L7.614,8.804l-2.021,2.021l2.232,1.061l-0.082,0.082l1.701,1.701l0.688-0.687l3.164,1.504L9.571,18.21H6.413l-1.137,1.138l3.6,0.948l1.83,1.83l0.947,3.598l1.137-1.137V21.43l3.725-3.725l1.504,3.164l-0.687,0.687l1.702,1.701l0.081-0.081l1.062,2.231l2.02-2.02l-0.604-2.689l0.912-0.912c0.326-0.326,1.121-1.789,0.604-2.306c-0.452-0.452-1.63,0.101-2.135,0.464l-0.861-3.838l2.777-2.777c0.947-0.947,3.599-4.862,2.62-5.839C24.533,4.512,20.618,7.163,19.671,8.11z";
                 var targetSVG = "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z M9,15.93 c-3.83,0-6.93-3.1-6.93-6.93S5.17,2.07,9,2.07s6.93,3.1,6.93,6.93S12.83,15.93,9,15.93 M12.5,9c0,1.933-1.567,3.5-3.5,3.5S5.5,10.933,5.5,9S7.067,5.5,9,5.5 S12.5,7.067,12.5,9z";
                 
-                map.imagesSettings = {
-			        rollOverColor: "#FFF000",
-			        rollOverScale: 3,
-                    selectedScale: 3,
-			        selectedColor: "#CCFF0F",
-                    balloonText: '[[title]]：[[customData]]', //You can use the following tags: [[title]], [[description]], [[value]] and [[percent]].
-                    // labelFontSize: 30,
-			    };
                 // change position of "JS map by amcharts"
                 map.creditsPosition = "top-right";
+
+                map.linesSettings = {
+			        color: "#EA0000",
+			        alpha: 0.99,
+			    };
 
 				map.areasSettings = {
                     rollOverOutlineColor: "#FFFFFF",
                     rollOverColor: "#CC0000",
-                    balloonText: "[[title]]---->[[customData]]",
+                    balloonText: "<span style='font-size:17px;'><b>[[title]]</b>[[customData]]</span>",
 					outlineThickness:1.25,
                     autoZoom:false,
                     selectedColor: "#FF841A",
                     unlistedAreasColor: "#888888",
 				};
 
+
+                var zhengzhou = {
+			        id: "zhengzhou",
+			        color: "#8F0000",
+                    value: 6,
+			        // svgPath: targetSVG,
+			        title: "郑州",
+                    customData: '<table border="1"><tr><th>姓名</th><th>学校</th></tr><tr><td>陈文轩</td><td><img width=135px height=35px src="./src/huel.png"></td></tr><tr><td>李昊忱</td><td rowspan="2"><img width=135px height=35px src="./src/zzu.png"></td></tr><tr><td style="font-size:15px">杨如弘若</td></tr><tr><td>王怡霖</td><td></td></tr><tr><td>张竞文</td><td></td></tr><tr><td>周非凡</td><td></td></tr></table>',
+			        latitude: 34.7000,
+			        longitude: 113.6000,
+			        // scale: 1.2,
+			        // zoomLevel: 2.74,
+			        // zoomLongitude: 34.7500,
+			        // zoomLatitude: 113.6333,
+
+			        lines: [
+                        // line add id : 'xx' and link it to planes
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 39.9056],
+			            longitudes: [113.6333, 116.3958],
+                    },
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 36.6702],
+			            longitudes: [113.6333, 117.0207]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 23.1166],
+			            longitudes: [113.6333, 113.2500]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 22.5333],
+			            longitudes: [113.6333, 114.0833]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 22.2711],
+			            longitudes: [113.6333, 113.5770]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 20.0500],
+			            longitudes: [113.6333, 110.1666]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 39.5380],
+			            longitudes: [113.6333, 116.6840]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 45.8013],
+			            longitudes: [113.6333, 126.5291]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 30.5833],
+			            longitudes: [113.6333, 114.3166]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 43.8845],
+			            longitudes: [113.6333, 125.3184]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 32.0438],
+			            longitudes: [113.6333, 118.7786]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 31.5000],
+			            longitudes: [113.6333, 120.6166]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 31.4900],
+			            longitudes: [113.6333, 120.3130]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 28.6830],
+			            longitudes: [113.6333, 115.8580]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 34.2650],
+			            longitudes: [113.6333, 108.9423]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 31.2286],
+			            longitudes: [113.6333, 121.4747]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 30.6600],
+			            longitudes: [113.6333, 104.0633]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 39.1336],
+			            longitudes: [113.6333, 117.2054]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 22.3000],
+			            longitudes: [113.6333, 114.2000]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 29.8603],
+			            longitudes: [113.6333, 121.6245]},
+			        {
+                        arc: -0.5,
+			            latitudes: [34.7500, 29.5637],
+			            longitudes: [113.6333, 106.5504]},
+			        ],
+                    images: [{
+			            label: "From 23 to ...",
+			            svgPath: planeSVG,
+			            left: 100,
+			            top: 60,
+                        title: "Count",
+                        customData: "49/66",
+			            color: "#7FFF00",
+			            labelColor: "#CCC000",
+			            labelRollOverColor: "#CC0000",
+			            labelFontSize: 20
+                    },
+                    ]
+			    };
+
+                mapData = [
+                            zhengzhou,
+                            {zoomLevel:1.25, scale:0.5, color:"#8F0000",title:"北京", latitude:39.9056, longitude:116.3958, customData:'<table border="1"><tr><th colspan="2"></th></tr><tr><th>&nbsp;姓&nbsp;&nbsp;名&nbsp;</th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大&nbsp;&nbsp;&nbsp;&nbsp;学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th></tr><tr><td>单昕</td><td rowspan="2"><img  height=45px src="./src/bsu.png"></td></tr><tr><td>冯雨欣</td></tr><tr><td>都可心</td><td><img height=36px src="./src/bfsu.png"></td></tr><tr><td>谷行言</td><td></td></tr><tr><td>李莞婷</td><td><img height="33px" src="./src/ruc.png"></td></tr><tr><td>王奕文</td><td></td></tr></table>',value: 6},
+                            {zoomLevel:1.25, scale:0.5, color:"#D64646",title:"济南", latitude:36.6702, longitude:117.0207, customData:'<table border="1"><tr><th>姓名</th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th></tr><tr><td>乔思锦</td><td rowspan="2"><img height=48px src="./src/sdu.png"></td></tr><tr><td>宋昱樟</td></tr></table>', value: 2},
+                            // {zoomLevel:1.25, scale:1.25, title:"郑州", latitude:34.7500, longitude:113.6333, customData:'陈文轩（河南财经政法大学）｜李昊忱、杨如弘若（郑州大学）｜王怡霖｜张竞文｜周非凡',},
+                            {zoomLevel:1.25, scale:0.5, color:"#D64646",title:"广州", latitude:23.1166, longitude:113.2500, customData:'<table border="1"><tr><th>姓名</th><th>学校</th></tr><tr><td>楚甜甜</td><td></td></tr><tr><td>樊志鑫</td><td></td></tr></table>', value: 2},
+                            {zoomLevel:1.25, scale:0.5, color:"#FF8282",title:"深圳", latitude:22.5333, longitude:114.0833, customData:'<table border="1"><tr><th>姓名</th><th>学校</th></tr><tr><td>李树欣</td><td></td></tr></table>', value: 1},
+                            {zoomLevel:1.25, scale:0.5, color:"#FF8282",title:"珠海", latitude:22.2711, longitude:113.5770, customData:'<table border="1"><tr><th>姓&nbsp;&nbsp;&nbsp;名</th><th>&nbsp;&nbsp;&nbsp;&nbsp;学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;校&nbsp;&nbsp;&nbsp;&nbsp;</th></tr><tr><td>陈艺菲</td><td><img height="35px" src="./src/uic.png"></td></tr></table>', value: 1},
+                            {zoomLevel:1.25, scale:0.5, color:"#FF8282",title:"海口", latitude:20.0500, longitude:110.1666, customData:'<table border="1"><tr><th>姓名</th><th>&nbsp;&nbsp;&nbsp;学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;校&nbsp;&nbsp;&nbsp;</th></tr><tr><td>刘尚</td><td><img height="35px" src="./src/hainanu.png"></td></tr></table>', value: 1},
+                            {zoomLevel:1.25, scale:0.5, color:"#FF8282",title:"廊坊", latitude:39.5380, longitude:116.6840, customData:'<table border="1"><tr><th>姓名</th><th>学校</th></tr><tr><td>胡校翡</td><td></td></tr></table>', value: 1},
+                            {zoomLevel:1.25, scale:0.5, color:"#FF8282",title:"哈尔滨", latitude:45.8013, longitude:126.5291, customData:'<table border="1"><tr><th>姓名</th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;校&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th></tr><tr><td>秦畅</td><td><img height=35px src="./src/neau.png"></td></tr></table>', value: 1},
+                            {zoomLevel:1.25, scale:0.5, color:"#D64646",title:"武汉", latitude:30.5833, longitude:114.3166, customData:'<table border="1"><tr><th>姓名</th><th>&nbsp;&nbsp;&nbsp;&nbsp;学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;校&nbsp;&nbsp;&nbsp;&nbsp;</th></tr><tr><td>侯凯鑫</td><td></td></tr><tr><td>沈小甜</td><td><img height=36px src="./src/zuel.png"></td></table>', value: 2},
+                            {zoomLevel:1.25, scale:0.5, color:"#FF8282",title:"长春", latitude:43.8845, longitude:125.3184, customData:'<table border="1"><tr><th>姓&nbsp;&nbsp;&nbsp;&nbsp;名&nbsp;</th><th>&nbsp;&nbsp;&nbsp;学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;校&nbsp;&nbsp;&nbsp;</th></tr><tr><td>赵子佳</td><td><img height="30px" src="./src/jisu.png"></td></tr></table>', value: 1},
+                            {zoomLevel:1.25, scale:0.5, color:"#AD1D1D",title:"南京", latitude:32.0438, longitude:118.7786, customData:'<table border="1"><tr><th>姓名</th><th>&nbsp;&nbsp;学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;校&nbsp;&nbsp;</th></tr><tr><td>陈柄言</td><td><img height="30px" src="./src/nau.png"></td></tr><tr><td>张禾佳</td><td></td></tr><tr><td>张婧懿</td><td></td></tr></table>', value: 3},
+                            {zoomLevel:1.25, scale:0.5, color:"#940404",title:"苏州", latitude:31.5000, longitude:120.6166, customData:'<table border="1"><tr><th>姓名</th><th>学校</th></tr><tr><td>李佳荣</td><td></td></tr><tr><td>王路灿</td><td></td></tr><tr><td>赵文迪</td><td><img height="33px" src="./src/xjtlu.png"></td></tr></table>', value: 4},
+                            {zoomLevel:1.25, scale:0.5, color:"#FF8282",title:"无锡", latitude:31.4900, longitude:120.3130, customData:'<table border="1"><tr><th>姓名</th><th>&nbsp;&nbsp;学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;校&nbsp;&nbsp;</th></tr><tr><td>杨沛霖</td><td><img height=33px src="./src/jiangnan.png"></td></table>', value: 1},
+                            {zoomLevel:1.25, scale:0.5, color:"#FF8282",title:"南昌", latitude:28.6830, longitude:115.8580, customData:'<table border="1"><tr><th>姓名</th><th>学校</th></tr><tr><td>赵畅</td><td></td></table>', value: 1},
+                            {zoomLevel:1.25, scale:0.5, color:"#8F0000",title:"西安", latitude:34.2650, longitude:108.9423, customData:'<table border="1"><tr><th>姓名</th><th>&nbsp;&nbsp;学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;校&nbsp;&nbsp;</th></tr><tr><td>冯靖涵</td><td><img height=33px src="./src/xidian.png"></td></tr><tr><td>李艺菲</td><td><img height=33px src="./src/snnu.png"></td></tr><tr><td>张瀚霖</td><td></td></tr><tr><td>赵煜晨</td><td></td></tr><tr><td>朱栎旭</td><td><img height=73px src="./src/sust.png"></td></tr></table>', value: 5},
+                            {zoomLevel:1.25, scale:0.5, color:"#D64646",title:"上海", latitude:31.2286, longitude:121.4747, customData:'<table border="1"><tr><th>&nbsp;姓&nbsp;&nbsp;&nbsp;&nbsp;名&nbsp;</th><th>&nbsp;&nbsp;&nbsp;学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;校&nbsp;&nbsp;&nbsp;</th></tr><tr><td>谷雨璞</td><td></td></tr><tr><td>王翔宇</td><td><img height=27px src="./src/shupl.png"></td></table>', value: 2},
+                            {zoomLevel:1.25, scale:0.5, color:"#FF8282",title:"成都", latitude:30.6600, longitude:104.0633, customData:'<table border="1"><tr><th>姓名</th><th>学校</th></tr><tr><td>张雨桐</td><td></td></tr></table>', value: 1},
+                            {zoomLevel:1.25, scale:0.5, color:"#D64646",title:"天津", latitude:39.1336, longitude:117.2054, customData:'<table border="1"><tr><th>姓名</th><th>学校</th></tr><tr><td>苗卓琦</td><td></td></tr><tr><td>周琬钦</td><td><img width=120px src="./src/nankai.png"></td></tr></table>', value: 2},
+                            {zoomLevel:1.25, scale:0.5, color:"#FF8282",title:"香港", latitude:22.3000, longitude:114.2000, customData:'<table border="1"><tr><th>姓名</th><th>学校</th></tr><tr><td>郭欣怡</td><td><img width=135px src="./src/cuhk.png"></td></tr></table>', value: 1},
+                            {zoomLevel:1.25, scale:0.5, color:"#D64646",title:"宁波", latitude:29.8603, longitude:121.6245, customData:'<table border="1"><tr><th>姓名</th><th>学校</th></tr><tr><td>李若静</td><td></td></tr><tr><td>钟紫涵</td><td><img width=100px src="./src/nottingham.png"></td></tr></table>', value: 2},
+                            {zoomLevel:1.25, scale:0.5, color:"#940404",title:"重庆", latitude:29.5637, longitude:106.5504, customData:'<table border="1"><tr><th>姓名</th><th>学校</th></tr><tr><td>马承钰</td><td><img width=120px height=35px src="./src/swu.png"></td></tr><tr><td>安麒羽</td><td></td></tr><tr><td>吕婧玥</td><td></td></tr><tr><td>常乂文</td><td></td></tr></table>', value: 4},
+                        //     {
+                        //     svgPath: planeSVG,
+                        //     positionOnLine: 0,
+                        //     color: "#000000",
+                        //     alpha: 0.1,
+                        //     animateAlongLine: true,
+                        //     lineId: "line2",
+                        //     flipDirection: true,
+                        //     loop: true,
+                        //     scale: 0.03,
+                        //     positionScale: 1.3
+                        // }, {
+                        //     svgPath: planeSVG,
+                        //     positionOnLine: 0,
+                        //     color: "#585869",
+                        //     animateAlongLine: true,
+                        //     lineId: "line1",
+                        //     flipDirection: true,
+                        //     loop: true,
+                        //     scale: 0.03,
+                        //     positionScale: 1.8
+                        // }
+                        ]
+
                 var dataProvider = {
                         mapVar: AmCharts.maps.china,
-                        images: [
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"北京", latitude:39.9056, longitude:116.3958, customData:'单昕、冯雨欣（北京体育大学）｜都可心（北京外国语大学）｜谷行言｜李莞婷（中国人民大学）｜王奕文',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"济南", latitude:36.6702, longitude:117.0207, customData:'乔思锦、宋昱樟（山东大学）',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"郑州", latitude:34.7500, longitude:113.6333, customData:'陈文轩（河南财经政法大学）｜李昊忱、杨如弘若（郑州大学）｜王怡霖｜张竞文｜周非凡',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"广州", latitude:23.1166, longitude:113.2500, customData:'楚甜甜｜樊志鑫',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"深圳", latitude:22.5333, longitude:114.0833, customData:'李树欣',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"珠海", latitude:22.2711, longitude:113.5770, customData:'陈艺菲（北京师范大学-香港浸会大学国际学院）',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"海口", latitude:20.0500, longitude:110.1666, customData:'刘尚（海南大学）',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"廊坊", latitude:39.5380, longitude:116.6840, customData:'胡校翡',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"哈尔滨", latitude:45.8013, longitude:126.5291, customData:'秦畅（东北农业大学）',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"武汉", latitude:30.5833, longitude:114.3166, customData:'侯凯鑫｜沈小甜（中南财经政法大学）',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"长春", latitude:43.8845, longitude:125.3184, customData:'赵子佳（吉林外国语大学）',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"南京", latitude:32.0438, longitude:118.7786, customData:'陈柄言（南京审计大学）｜张禾佳｜张婧懿',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"苏州", latitude:31.5000, longitude:120.6166, customData:'李佳荣｜王路灿｜赵文迪（西交利物浦）',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"无锡", latitude:31.4900, longitude:120.3130, customData:'杨沛霖（江南大学）',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"南昌", latitude:28.6830, longitude:115.8580, customData:'赵畅',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"西安", latitude:34.2650, longitude:108.9423, customData:'冯靖涵（西安电子科技大学）｜李艺菲（陕西师范大学）｜张瀚霖｜赵煜晨｜朱栎旭（陕西科技大学）',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"上海", latitude:31.2286, longitude:121.4747, customData:'谷雨璞｜王翔宇（上海政法学院）',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"成都", latitude:30.6600, longitude:104.0633, customData:'张雨桐',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"天津", latitude:39.1336, longitude:117.2054, customData:'苗卓琦｜周琬钦（南开大学）',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"香港", latitude:22.3000, longitude:114.2000, customData:'郭欣怡（香港中文大学）',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"宁波", latitude:29.8603, longitude:121.6245, customData:'李若静｜钟紫涵（宁波诺丁汉）',},
-                            {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"重庆", latitude:29.5637, longitude:106.5504, customData:'马承钰（西南大学）｜安麒羽｜吕婧玥｜常乂文',},
-                            
-                        ],
+                        images: [],
                         getAreasFromMap: true,
                         autoZoom:false,
                 };
+
 
                 // area data writes here
                 dataProvider.areas = [
@@ -79,13 +222,13 @@
                         id: 'CN-34',
                         color: "#888888",
                         customData: "0人",
-                        groupId: "0"
+                        groupId: "0",
                     },
                     {
                         title: "北京",
                         id: 'CN-11',
                         color: "#A5DEFF",
-                        customData: "单昕、冯雨欣（北京体育大学）｜都可心（北京外国语大学）｜谷行言｜李莞婷（中国人民大学）｜王奕文。",
+                        customData: '<table border="1"><tr><th>城&nbsp;市</th><th>学校</th><th>姓&nbsp;&nbsp;&nbsp;名</th></tr><tr><td rowspan="6">北京</td><td rowspan="2"><img height="35px" width="120px" src="./src/bsu.png"></td><td>单昕</td></tr><tr><td>冯雨欣</td></tr><td><img height="35px" width="120px" src="./src/bfsu.png"></td><td>都可心</td></tr><td></td><td>谷行言</td></tr><tr><td><img height="35px" width="120px" src="./src/ruc.png"></td><td>李莞婷</td></tr><tr><td></td><td>王奕文</td></tr></table>',
                         groupId: "6"
                     },
                     {
@@ -99,14 +242,14 @@
                         title: "山东",
                         id: 'CN-37',
                         color: "#215AB0",
-                        customData: "济南：乔思锦、宋昱樟（山东大学）。",
+                        customData: '<table border="1"><tr><th>城&nbsp;市</th><th>学校</th><th>姓&nbsp;&nbsp;&nbsp;名</th></tr><tr><td rowspan="2">济南</td><td rowspan="2"><img height=35px width=100px src="./src/sdu.png"></td><td>乔思锦</td></tr><tr><td>宋昱樟</td></tr></table>',
                         groupId: "2"
                     },
                     {
                         title: "河南",
                         id: 'CN-41',
                         color: "#A5DEFF",
-                        customData: "郑州：陈文轩（河南财经政法大学）｜李昊忱、杨如弘若（郑州大学）｜王怡霖｜张竞文｜周非凡",
+                        customData: '<table border="1"><tr><th>城市</th><th>学校</th><th>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</th></tr><tr><td rowspan="6">郑州</td><td><img height="35px" width="120px" src="./src/huel.png"></td><td>陈文轩</td></tr><tr><td rowspan="2"><img height="35px" width="120px" src="./src/zzu.png"></td><td>李昊忱</td></tr><tr><td>杨如弘若</td></tr><tr><td></td><td>王怡霖</td></tr><tr><td></td><td>张竞文</td></tr><tr><td></td><td>周非凡</td></tr></table>',
                         groupId: "6"
                     },
                     {
@@ -148,49 +291,49 @@
                         title: "海南",
                         id: 'CN-46',
                         color: "#002B81",
-                        customData: "海口：刘尚（海南大学）。",
+                        customData: '<table border="1"><tr><th>城市</th><th>学校</th><th>姓名</th></tr><tr><td>海口</td><td><img width=120px height=35px src="./src/hainanu.png"></td><td>刘尚</td></tr></table>',
                         groupId: "1"
                     },
                     {
                         title: "河北",
                         id: 'CN-13',
                         color: "#002B81",
-                        customData: "廊坊：胡校翡。",
+                        customData: '<table border="1"><tr><th>城市</th><th>学校</th><th>姓名</th></tr><tr><td>廊坊</td><td></td><td>胡校翡</td></table>',
                         groupId: "1"
                     },
                     {
                         title: "黑龙江",
                         id: 'CN-23',
                         color: "#002B81",
-                        customData: "哈尔滨：秦畅（东北农业大学）。",
+                        customData: '<table border="1"><tr><th>城&nbsp;&nbsp;&nbsp;市</th><th>学校</th><th>姓&nbsp;&nbsp;&nbsp;名</th></tr><tr><td>哈尔滨</td><td><img height="30px" width="101px" src="./src/neau.png"></td><td>秦畅</td></tr></table>',
                         groupId: "1"
                     },
                     {
                         title: "湖北",
                         id: 'CN-42',
                         color: "#215AB0",
-                        customData: "武汉：侯凯鑫｜沈小甜（中南财经政法大学）。",
+                        customData: '<table border="1"><tr><th>城市</th><th>学校</th><th>姓&nbsp;&nbsp;&nbsp;名</th></tr><tr><td rowspan="2">武汉</td><td></td><td>侯凯鑫</td></tr><tr><td><img width="120px" height="35px" src="./src/zuel.png"></td><td>沈小甜</td></tr></table>',
                         groupId: "2"
                     },
                     {
                         title: "吉林",
                         id: 'CN-22',
                         color: "#002B81",
-                        customData: "长春：赵子佳（吉林外国语大学）。",
+                        customData: '<table border="1"><tr><th>城市</th><th>学校</th><th>姓&nbsp;&nbsp;&nbsp;名</th></tr><tr><td>长春</td><td><img height="35px" width="120px" src="./src/jisu.png"></td><td>赵子佳</td></tr></table>',
                         groupId: "1"
                     },
                     {
                         title: "江苏",
                         id: 'CN-32',
                         color: "#6CFFFF",
-                        customData: "南京：陈柄言（南京审计大学）｜张禾佳｜张婧懿；苏州：李佳荣｜王路灿｜赵文迪（西交利物浦）；无锡：杨沛霖（江南大学）。",
+                        customData: '<table border="1"><tr><th>城市</th><th>学校</th><th>姓&nbsp;&nbsp;&nbsp;名</th></tr><tr><td rowspan="3">南京</td><td><img height="35px" width="120px" src="./src/nau.png"></td><td>陈柄言</td></tr><tr><td></td><td>张禾佳</td></tr><tr><td></td><td>张婧懿</td></tr><tr><td rowspan="3">苏州</td><td></td><td>李佳荣</td></tr><tr><td></td><td>王路灿</td></tr><tr><td><img height="33px" width="120px" src="./src/xjtlu.png"></td><td>赵文迪</td></tr></table>',
                         groupId: "7"
                     },
                     {
                         title: "江西",
                         id: 'CN-36',
                         color: "#002B81",
-                        customData: "南昌：赵畅",
+                        customData: '<table border="1"><tr><th>城市</th><th>学校</th><th>姓名</th></tr><tr><td>南昌</td><td></td><td>赵畅</td></tr></table>',
                         groupId: "1"
                     },
                     {
@@ -232,28 +375,28 @@
                         title: "陕西",
                         id: 'CN-61',
                         color: "#81BAFF",
-                        customData: "西安：冯靖涵（西安电子科技大学）｜李艺菲（陕西师范大学）｜张瀚霖｜赵煜晨｜朱栎旭（陕西科技大学）。",
+                        customData: '<table border="1"><tr><th>城市</th><th>学校</th><th>姓&nbsp;&nbsp;&nbsp;名</th></tr><tr><td rowspan="5">西安</td><td><img height="35px" width="120px" src="./src/xidian.png"></td><td>冯靖涵</td></tr><tr><td><img height=35px width=120px src="./src/snnu.png"></td><td>李艺菲</td></tr><tr><td></td><td>张瀚霖</td></tr><tr><td></td><td>赵煜晨</td></tr><tr><td><img height=60px width=120px src="./src/sust.png"></td><td>朱栎旭</td></tr></table>',
                         groupId: "5"
                     },
                     {
                         title: "上海",
                         id: 'CN-31',
                         color: "#215AB0",
-                        customData: "谷雨璞｜王翔宇（上海政法学院）。",
+                        customData: '<table border="1"><tr><th>城市</th><th>学校</th><th>姓&nbsp;&nbsp;&nbsp;名</th></tr><tr><td rowspan="2">上海</td><td></td><td>谷雨璞</td></tr><tr><td><img height="35px" width="120px" src="./src/shupl.png"></td><td>王翔宇</td></tr></table>',
                         groupId: "2"
                     },
                     {
                         title: "四川",
                         id: 'CN-51',
                         color: "#002B81",
-                        customData: "成都：张雨桐。",
+                        customData: '<table border="1"><tr><th>城市</th><th>学校</th><th>姓名</th></tr><tr><td>成都</td><td></td><td>张雨桐</td></tr></table>',
                         groupId: "1"
                     },
                     {
                         title: "天津",
                         id: 'CN-12',
                         color: "#215AB0",
-                        customData: "苗卓琦｜周琬钦（南开大学）",
+                        customData: '<table border="1"><tr><th>城市</th><th>学校</th><th>姓&nbsp;&nbsp;&nbsp;名</th></tr><tr><td rowspan="2">天津</td><td></td><td>苗卓琦</td></tr><tr><td><img width=120px src="./src/nankai.png"></td><td>周琬钦</td></tr></table>',
                         groupId: "2"
                     },
                     {
@@ -281,21 +424,21 @@
                         title: "香港",
                         id: 'CN-91',
                         color: "#002B81",
-                        customData: "郭欣怡（香港中文大学）",
+                        customData: '<table border="1"><tr><th>城市</th><th>学校</th><th>姓名</th></tr><tr><td>香港</td><td><img width=135px src="./src/cuhk.png"></td><td>郭欣怡</td></tr></table>',
                         groupId: "1"
                     },
                     {
                         title: "浙江",
                         id: 'CN-33',
                         color: "#215AB0",
-                        customData: "宁波：李若静｜钟紫涵（宁波诺丁汉）。",
+                        customData: '<table border="1"><tr><th>城市</th><th>学校</th><th>姓名</th></tr><tr><td rowspan="2">宁波</td><td></td><td>李若静</td></tr><tr><td><img width=120px height="35px" src="./src/nottingham.png"></td><td>钟紫涵</td></tr></table>',
                         groupId: "2"
                     },
                     {
                         title: "重庆",
                         id: 'CN-50',
                         color: "#518AE0",
-                        customData: "马承钰（西南大学）｜安麒羽｜吕婧玥｜常乂文。",
+                        customData: '<table border="1"><tr><th>城市</th><th>学校</th><th>姓名</th></tr><tr><td rowspan="4">重庆</td><td><img width=120px height=35px src="./src/swu.png"></td><td>马承钰</td></tr><tr><td></td><td>安麒羽</td></tr><tr><td></td><td>吕婧玥</td></tr><tr><td></td><td>常乂文</td></tr></table>',
                         groupId: "4"
                     },
                     {
@@ -315,7 +458,7 @@
                 ];
 
                 // data count
-                var legend = {
+                var legend_ = {
 			        width: 400,
 			        backgroundAlpha: 0.5,
 			        backgroundColor: "#FFFFFF",
@@ -360,15 +503,83 @@
 			        ]
 			    };
 
-                map.addLegend(legend);
+                var map;
+                var minBulletSize = 10;
+                var maxBulletSize = 20;
+                var min = 1;
+                var max = 7;
+
+    			// get min and max values
+                var maxSquare = maxBulletSize * maxBulletSize * 2 * Math.PI;
+				var minSquare = minBulletSize * minBulletSize * 2 * Math.PI;
+
+                for (var i = 0; i < mapData.length; i++) {
+					var dataItem = mapData[i];
+					var value = dataItem.value;
+					// calculate size of a bubble
+					var square = (value - min) / (max - min) * (maxSquare - minSquare) + minSquare;
+					if (square < minSquare) {
+						square = minSquare;
+					}
+					var size = Math.sqrt(square / (Math.PI * 2));
+                    // console.log(value, square, size);
+					var id = dataItem.id;
+
+                    if (Object.keys(dataItem).length == 8){
+                        dataProvider.images.push({
+                            zoomLevel: dataItem.zoomLevel,
+                            type: "circle",
+                            width: size,
+                            height: size,
+                            color: dataItem.color,
+                            longitude: dataItem.longitude,
+                            latitude: dataItem.latitude,
+                            title: dataItem.title,
+                            value: value,
+                            customData: dataItem.customData,
+                        });
+                    }else{
+                        dataProvider.images.push({
+                            id: dataItem.id,
+                            type: "circle",
+                            width: size,
+                            height: size,
+                            color: dataItem.color,
+                            longitude: dataItem.longitude,
+                            latitude: dataItem.latitude,
+                            title: dataItem.title,
+                            value: value,
+                            customData: dataItem.customData,
+                            lines: dataItem.lines,
+                            images: dataItem.images,
+                        });
+                    }
+                }
+
+                map.imagesSettings = {
+			        rollOverColor: "#FFF000",
+			        rollOverScale: 2,
+                    selectedScale: 1.2,
+			        selectedColor: "#CCFF0F",
+                    balloonText: "<span style='font-size:19px;'><b>[[title]]</b>: [[customData]]</span>", //You can use the following tags: [[title]], [[description]], [[value]] and [[percent]].
+                    // labelFontSize: 30,
+                    // pauseDuration: 0.2,
+                    // animationDuration:2.5,
+                    // adjustAnimationSpeed:true
+			    };
+
+                // console.log(legend_)
+                map.addLegend(legend_);
+                // console.log(dataProvider);
+				map.backgroundZoomsToTop = true;
+                dataProvider.linkToObject = dataProvider.images[0];
+				map.linesAboveImages = true;
+                // console.log(dataProvider.images[0])
                 map.dataProvider = dataProvider;
-                // map.objectList = new AmCharts.ObjectList("listdiv");
-			    // map.showImagesInList = true;
-                // map.showAreasInList = false;
 
 			    map.write("mapdivChina");
-            });
-
+        }
+        );
         </script>
     </head>
 
@@ -377,6 +588,7 @@
 
         </div> -->
         <!-- <img src='./src/001.jpg' id="coverA"> -->
+        <!-- 导航栏 -->
         <div id="navigation">
             <ul>
                 <li class='list'>
@@ -441,9 +653,6 @@
                 </li>
             </ul>
         </div>
-        <!-- <audio autoplay>
-            <source src='./src/Minecraft.mp3'>
-        </audio> -->
         <div id='memory'>
             <div class='memories'>
                 <h2>2021届新枫杨记忆回顾</h2>
@@ -475,7 +684,9 @@
 
             </div>
         </div>
-        <div id="mapdivChina"></div>
+        <div id="mapdivChina">
+
+        </div>
         <!-- <div id="listdiv"></div> -->
     </body>
     <script>
